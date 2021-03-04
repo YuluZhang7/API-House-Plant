@@ -5,17 +5,31 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
     </head>
     <body>
-        <img id="img" src="157216058_3106163039486031_7899859571893976981_n.jpg" width="768" height="576" />
+        <img id="sketch" src="" width="768" height="576" />
         <canvas id="canvas" width="2000" height="2000"></canvas>
 
         <script>
+            
+         //fetch sketch and display on website
+            async function sketch(){
+                const response = await fetch ("sketch.jpg");
+                const blob= await response.blob();
+                document.getElementById("sketch").src = URL.createObjectURL(blob);
+                console.log(blob);
+            };
+
+            sketch();
           //draw on canvas with texts
             let canvas= document.getElementById("canvas");
             let draw=canvas.getContext("2d");
+
+
+            
             draw.fillStyle="#008000";
             draw.font = '80px Arial'; 
-            draw.fillText("Hi! How is your day?",200,200);
+            draw.fillText("Hi! How is your day?",200,300);
             
+
 
             //voice control and texts feedback on website
             if (annyang) {
@@ -23,17 +37,17 @@
               var commands = {
                 'I am good thank you': function() {
                    draw.fillStyle="#008000";
-                   draw.font = '100px Arial'; 
-                   draw.fillText("That's perfect.",200,300);
+                   draw.font = '80px Arial'; 
+                   draw.fillText("That's perfect.",350,400);
                    console.log("working!")
                    
                 },
 
                 //when users say "I am having a bad day", draw text "Oh!What has happened?"
                 'I am having a bad day': function() {
-                   draw.fillStyle="#FFC0CB";
-                   draw.font = '100px Arial'; 
-                   draw.fillText("Oh! What has happened?",300,400);
+                   draw.fillStyle="#008000";
+                   draw.font = '80px Arial'; 
+                   draw.fillText("Oh! What has happened?",120,500);
                 },
               };
             

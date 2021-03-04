@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    </head>
+    <body>
+        <img id="img" src="157216058_3106163039486031_7899859571893976981_n.jpg" width="768" height="576" />
+        <canvas id="canvas" width="2000" height="2000"></canvas>
+
+        <script>
+          //draw on canvas with texts
+            let canvas= document.getElementById("canvas");
+            let draw=canvas.getContext("2d");
+            draw.fillStyle="#008000";
+            draw.font = '80px Arial'; 
+            draw.fillText("Hi! How is your day?",200,200);
+            
+
+            //voice control and texts feedback on website
+            if (annyang) {
+              //when users say "I am good thank you", draw text"That is perfect."
+              var commands = {
+                'I am good thank you': function() {
+                   draw.fillStyle="#008000";
+                   draw.font = '100px Arial'; 
+                   draw.fillText("That's perfect.",200,300);
+                   console.log("working!")
+                   
+                },
+
+                //when users say "I am having a bad day", draw text "Oh!What has happened?"
+                'I am having a bad day': function() {
+                   draw.fillStyle="#FFC0CB";
+                   draw.font = '100px Arial'; 
+                   draw.fillText("Oh! What has happened?",300,400);
+                },
+              };
+            
+              
+              annyang.addCommands(commands);
+            
+              //browser start listening. 
+              annyang.start();
+            }
+            </script>
+
+    </body>
+    
+
+
+</html>

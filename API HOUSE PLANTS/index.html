@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        
         <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <img id="sketch" src="" width="768" height="576" />
-        <canvas id="canvas" width="2000" height="2000"></canvas>
+        <h1 id="words">Hi!Sunny day made me feel like talking, How are you today?</h1>
+        
+        
 
         <script>
             
@@ -19,35 +22,44 @@
             };
 
             sketch();
-          //draw on canvas with texts
-            let canvas= document.getElementById("canvas");
-            let draw=canvas.getContext("2d");
+
+          //fetch a different sketch at the same location
+            async function sketch1(){
+                const response = await fetch ("sketch1.png");
+                const blob= await response.blob();
+                document.getElementById("sketch").src = URL.createObjectURL(blob);
+                console.log(blob);
+            };
+            
+            
+           //fetch a different sketch at the same location
+            async function sketch2(){
+                const response = await fetch ("sketch2.png");
+                const blob= await response.blob();
+                document.getElementById("sketch").src = URL.createObjectURL(blob);
+                console.log(blob);
+            };
 
 
-            
-            draw.fillStyle="#008000";
-            draw.font = '80px Arial'; 
-            draw.fillText("Hi! How is your day?",200,300);
-            
+            let words=document.getElementById("words");
 
 
             //voice control and texts feedback on website
             if (annyang) {
-              //when users say "I am good thank you", draw text"That is perfect."
+              //react to users say "I am good thank you"
               var commands = {
                 'I am good thank you': function() {
-                   draw.fillStyle="#008000";
-                   draw.font = '80px Arial'; 
-                   draw.fillText("That's perfect.",350,400);
-                   console.log("working!")
-                   
+                    
+                  sketch1();
+                  words.innerHTML="That is perfect!"
+
                 },
 
-                //when users say "I am having a bad day", draw text "Oh!What has happened?"
+                //react to users say "I am having a bad day"
                 'I am having a bad day': function() {
-                   draw.fillStyle="#008000";
-                   draw.font = '80px Arial'; 
-                   draw.fillText("Oh! What has happened?",120,500);
+                  sketch2();
+                  words.innerHTML="I am sorry to hear that!"
+
                 },
               };
             

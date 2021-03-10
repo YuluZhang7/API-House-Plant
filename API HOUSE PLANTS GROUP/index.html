@@ -2,6 +2,7 @@
 <html>
   <head>
     <style>
+      /*styling background with colors and texts*/
       body {
         color: black;
         background-color: rgba(24, 163, 19, 0.363);
@@ -15,7 +16,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
   </head>
   <body>
+    <!--inset picture-->
     <img id="img" src="plantunsplash.jpg" width="459.2" height="344.8"/>
+    <!--insert texts -->
     <h1 id="click">Click the web!</h1>
     <script>
       if (annyang) {
@@ -34,18 +37,19 @@
           "Neutral 6.m4a",
         ];
 
-
+        // get picture and text
         let click=document.getElementById("click");
 
         let img=document.getElementById("img");
+        
 
-
+        // a function for display the image and change text content
         function switchtopic(){
           click.innerHTML="I am listening.";
           img.src="plantunsplash.jpg";
-         
-          
-        }
+        };
+
+        //when user click the webpage, run "switchtopic" function
         document.addEventListener("click",switchtopic);
 
         //Listens for words/feelings
@@ -61,7 +65,7 @@
             happy.play();
         } else if(word.indexOf("sad") > -1) {
             sad.play();
-        } else {
+        } else { 
           let randomAudio = neutral[Math.floor(Math.random() * neutral.length)];
           let neutralFiles = new Audio(randomAudio);
           neutralFiles.play();
@@ -72,14 +76,14 @@
         console.log(word);
         };
 
-
+  
         //Declares variable for the commands used
         var commands = {
           "*tag": feelings,
         };
 
 
-        //Prints what the API thinks I said on to the document
+        //Display picture and Prints what the API thinks I said on to the document
         annyang.addCallback("result", function (phrases) {
           img.src="plantunsplash.jpg";
           click.innerHTML = "I think you said: " + phrases[0];

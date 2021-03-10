@@ -7,4 +7,4 @@ If users use positive words such as "happy" and "joyful", the API will catch the
 ## Negative words
 If users use negative words such as "sad", the API will catch these words in particular and react with a sad recording. Browser prints words on display. 
 ## Neutral words
-If users say other words that do not include positive and negative words we defined in code, the API will display a netural feeling recording. Browser out prints words on display.
+If users say other words that do not include positive and negative words we defined in code, the API will display a netural feeling recording. Browser prints words on display.

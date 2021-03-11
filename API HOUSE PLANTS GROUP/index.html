@@ -6,7 +6,7 @@
       body {
         color: black;
         background-color: rgba(24, 163, 19, 0.363);
-        font-size: 60px;
+        font-size: 40px;
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         text-align: center;
       };
@@ -17,9 +17,9 @@
   </head>
   <body>
     <!--inset picture-->
-    <img id="img" src="plantunsplash.jpg" width="459.2" height="344.8"/>
+    <img id="img" src="img.png" width="768" height="576" />
     <!--insert texts -->
-    <h1 id="click">Click the web!</h1>
+    <h1 id="click">Click me!</h1>
     <script>
       if (annyang) {
 
@@ -46,7 +46,7 @@
         // a function for display the image and change text content
         function switchtopic(){
           click.innerHTML="I am listening.";
-          img.src="plantunsplash.jpg";
+          img.src="img1.png";
         };
 
         //when user click the webpage, run "switchtopic" function
@@ -61,10 +61,10 @@
         let word = tag.split(/\s+/);
        
         //Searches if the words "sad" or "happy" are present in the array and if not plays a randomized neutral sound
-        if (word.indexOf("happy") || ("love") || ("jolly") > -1) {
-            happy.play();
-        } else if(word.indexOf("sad") > -1) {
-            sad.play();
+        if (word.indexOf("happy")> -1) {
+          happy.play();
+        }else if(word.indexOf("sad") > -1) {
+          sad.play();
         } else { 
           let randomAudio = neutral[Math.floor(Math.random() * neutral.length)];
           let neutralFiles = new Audio(randomAudio);
@@ -85,7 +85,7 @@
 
         //Display picture and Prints what the API thinks I said on to the document
         annyang.addCallback("result", function (phrases) {
-          img.src="plantunsplash.jpg";
+          img.src="img2.png";
           click.innerHTML = "I think you said: " + phrases[0];
         });
 

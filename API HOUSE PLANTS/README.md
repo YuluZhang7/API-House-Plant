@@ -1,6 +1,6 @@
 # API HOUSE PLANT INDIVIDUAL EXPERIMENT
 ## Description of the project
-The house plant experiment focus on supporting human being's mental being by conversation's method. 
+The house plant experiment focus on supporting human being's mental being by conversation's method.To indicate different states the house plant can support human, the conversation are departed into two sides. One side is when human have a good day and how plant reactation could support. The other side is when human have a bad day and how plants reaction could support. The interaction is simulated by talking to broswer and see accordingly changes.
 ### Chosen example
 Chosen example is API from Annyang which allows browser to listen and recognize user's speech. When user speaks a certain phrase that is already written in code, the browser would react accordingly. 
 ### Default page

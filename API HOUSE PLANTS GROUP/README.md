@@ -3,7 +3,7 @@ Browser will react to user's speech and then display relevant voice to it. The w
 ## Chosen example
 Chosen example is API from Annyang which allows browser to listen and recognize user's speech.Users are allowed to say whichever they want, and the browser will catch part of the conversation and react accordingly."
 ## Positive words 
-If users use positive words such as "happy" and "joyful", the API will catch these words in particular and react witn a happy recording. Browser prints words on display. 
+If users use positive words such as "happy", the API will catch these words in particular and react witn a happy recording. Browser prints words on display. 
 ## Negative words
 If users use negative words such as "sad", the API will catch these words in particular and react with a sad recording. Browser prints words on display. 
 ## Neutral words

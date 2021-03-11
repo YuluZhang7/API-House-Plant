@@ -1,5 +1,5 @@
 # API HOUSE PLANT INDIVIDUAL EXPERIMENT
-The house plant experiment focus on supporting human being's mental being by conversation's method. To indicate different states the house plant can support human. The conversation are departed into two sides. One side is when human have a good day and how plant reactation could support. The other side is when human have a bad day and how plants reaction could support. The interaction is simulated by talking to broswer and see accordingly changes. 
+The house plant experiment focus on supporting human being's mental being by conversation's method. To indicate different states the house plant can support human, the conversation are departed into two sides. One side is when human have a good day and how plant reactation could support. The other side is when human have a bad day and how plants reaction could support. The interaction is simulated by talking to broswer and see accordingly changes. 
 ## Chosen example
 Chosen example is API from Annyang which allows browser to listen and recognize user's speech. When user speaks a certain phrase that is already written in code, the browser would react accordingly. 
 ## Default page
@@ -11,4 +11,5 @@ User says"I am good thank you." Browser displays accrodingly images and line "Th
 ## Negative conversations
 User says"I am having a bad day." Browser displays accrodingly images and line "I am sorry to hear that."
 ![plant neg](https://user-images.githubusercontent.com/79635121/110327286-108b4600-801a-11eb-9214-ac679cc964a4.png)
-
+## Use of code
+Please download Visual Studio Code. Copy and Paste all file's documents into a folder and open folder with Visual Studio Code. Use Live Server when open browser. All pictures are drawn by me only. All codes are developed by me. 
